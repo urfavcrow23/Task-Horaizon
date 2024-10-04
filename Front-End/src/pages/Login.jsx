@@ -105,7 +105,7 @@ const Login = () => {
           <h2 className="text-black text-3xl font-bold leading-relaxed ">
             Manage your tasks and
             <br /> Operations
-            <span className="text-[#6b43dd]"> more Professionally</span>
+            <span className="text-[#6b43dd]"> more Professionally.</span>
           </h2>
         </div>
 
