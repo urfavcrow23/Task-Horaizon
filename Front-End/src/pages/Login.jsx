@@ -14,7 +14,6 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
   const navigate = useNavigate();
 
   const submitHandler = async (data) => {
@@ -22,9 +21,10 @@ const Login = () => {
   };
 
   useEffect(() => {
-    user;
-    // user && navigate("/dashboard");
-  }, [user]);
+    if (user) {
+      // navigate("/dashboard");  Redirect to dashboard if user is logged in
+    }
+  }, [user, navigate]); // Added 'navigate' to dependency array
 
   return (
     <div className="px-40 py-6 flex gap-6 h-screen">
@@ -96,7 +96,7 @@ const Login = () => {
 
       <div className="relative flex flex-col overflow-hidden basis-1/2 bg-violet-100 rounded-2xl p-12">
         <div className="flex flex-col gap-6 z-10">
-          <div className="text-slate-600 border-2 border-slate-300 rounded-full inline-block p-4 bg-slate-100 shadow-md size-fit">
+          <div className="text-slate-600 border-2 border-slate-300 rounded-full inline-block p-3 bg-slate-100 shadow-md size-fit">
             <p className="text-sm font-medium">
               Manage all your tasks in one place
             </p>
